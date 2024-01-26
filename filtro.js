@@ -10,8 +10,8 @@ const productos = [
   { nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg" }
 ]
 
-const li = document.getElementById("lista-de-productos");
-const $i = document.querySelector('input');
+const li = document.getElementById("lista-de-productos"); // Cambio en la selección del elemento li de document.getElementsByName a document.getElementById
+const $i = document.querySelector('input'); // Cambio en el selector del input $i de '.input' a 'input'
 
 for (let i = 0; i < productos.length; i++) {
   var d = document.createElement("div")
@@ -29,7 +29,7 @@ for (let i = 0; i < productos.length; i++) {
 
   li.appendChild(d)
 }
-
+// Función no definida displayProductos, asumí que se quiso referir a la función filtrado
 const filtrado = (productos = [], texto) => {
   return productos.filter(item => item.tipo.includes(texto) || item.color.includes(texto));
 };
@@ -43,6 +43,8 @@ botonDeFiltro.onclick = function () {
 
   const texto = $i.value;
   console.log(texto);
+  // Función no definida displayProductos, asumí que se quiso referir a la función filtrado
+  // Se cambió el nombre de la función de filtrado de displayProductos a filtrado
   const productosFiltrados = filtrado(productos, texto);
 
   for (let i = 0; i < productosFiltrados.length; i++) {
